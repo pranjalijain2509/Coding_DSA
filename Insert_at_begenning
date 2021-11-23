@@ -1,0 +1,21 @@
+Insert_at_begenning
+
+
+class node:
+    def __init__(self,k):
+        self.data=k
+        self.next=None
+def insert(head,x):
+    temp=node(x)
+    temp.next=head
+    return temp
+def printli(head):
+    cur=head
+    while cur!=None:
+        print(cur.data,end=" ")
+        cur=cur.next
+head=None
+head=insert(head,10)
+head=insert(head,20)
+head=insert(head,30)
+printli(head)
