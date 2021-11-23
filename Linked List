@@ -1,5 +1,6 @@
 Traverse in Linked List-
 
+
 class node:
     def __init__(self,k):
         self.data=k
