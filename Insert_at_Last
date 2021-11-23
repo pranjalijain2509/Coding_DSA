@@ -1,0 +1,25 @@
+Insert_at_Last
+
+class node:
+    def __init__(self,k):
+        self.data=k
+        self.next=None
+def insert_at_last(head,x):
+    if head==None:
+        return node(x)
+    cur=head
+    while cur.next!=None:
+        cur=cur.next
+    cur.next=node(x)
+    return head
+def printli(head):
+    cur=head
+    while cur!=None:
+        print(cur.data,end=" ")
+        cur=cur.next
+    
+head=None
+head=insert_at_last(head,34)
+head=insert_at_last(head,35)
+head=insert_at_last(head,36)
+printli(head)
