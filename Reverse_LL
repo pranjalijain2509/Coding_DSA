@@ -1,0 +1,32 @@
+Reverse_LL- It is a naive approach
+
+#reverse
+
+class node:
+    def __init__(self,k):
+        self.data=k
+        self.next=None
+def reverse(head):
+    stack=[]
+    cur=head
+    while cur is not None:
+        stack.append(cur.data)
+        cur=cur.next
+    cur=head
+    while cur is not None:
+        cur.data=stack.pop()
+        print(cur.data,end=" ")
+        cur=cur.next
+def printli(head):
+    cur=head
+    while cur!=None:
+        print(cur.data,end=" ")
+        cur=cur.next
+head=node(10)
+head.next=node(20)
+head.next.next=node(30)
+head.next.next.next=node(40)
+printli(head)
+print()
+head=reverse(head)
+printli(head)
