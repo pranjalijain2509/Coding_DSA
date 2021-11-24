@@ -1,0 +1,34 @@
+Reverse_LL_Recursion
+
+
+#reverse linked list using recursion
+#time complexity is theta(n)
+#space complexity is theta(n)
+
+class node:
+    def __init__(self,k):
+        self.data=k
+        self.next=None
+def reverse_recu(head):
+    if head==None:
+        return None
+    if head.next==None:
+        return head
+    res_head=reverse_recu(head.next)
+    res_tail=head.next
+    res_tail.next=head
+    head.next=None
+    return res_head
+def printli(head):
+    cur=head
+    while cur!=None:
+        print(cur.data,end=" ")
+        cur=cur.next
+head=node(20)
+head.next=node(24)
+head.next.next=node(56)
+printli(head)
+print()
+head=reverse_recu(head)
+printli(head)
+    
