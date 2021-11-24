@@ -1,0 +1,28 @@
+Reverse_LL-Efficient
+
+
+class node:
+    def __init__(self,k):
+        self.data=k
+        self.next=None
+def reverse_eff(head):
+    cur=head
+    prev=None
+    while cur is not None:
+        nex=cur.next
+        cur.next=prev
+        prev=cur
+        cur=nex
+    return prev
+def printli(head):
+    cur=head
+    while cur!=None:
+        print(cur.data,end=" ")
+        cur=cur.next
+head=node(20)
+head.next=node(24)
+head.next.next=node(56)
+printli(head)
+print()
+head=reverse_eff(head)
+printli(head)
