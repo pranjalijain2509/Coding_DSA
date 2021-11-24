@@ -1,0 +1,29 @@
+Delete_last
+
+
+class node:
+    def __init__(self,k):
+        self.data=k
+        self.next=None
+def delete_last(head):
+    if head==None:
+        return None
+    if head.next==None:
+        return None
+    cur=head
+    while cur.next.next!=None:
+        cur=cur.next
+    cur.next=None
+    return head
+def printli(head):
+    cur=head
+    while cur!=None:
+        print(cur.data,end=" ")
+        cur=cur.next
+head=node(10)
+head.next=node(39)
+head.next.next=node(78)
+printli(head)
+print()
+head=delete_last(head)
+printli(head)
