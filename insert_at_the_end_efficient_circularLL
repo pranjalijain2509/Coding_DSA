@@ -1,0 +1,33 @@
+#insert_at_the_end_efficient
+#space- theta 1
+#Time -theta 1
+
+class node:
+    def __init__(self,k):
+        self.data=k
+        self.next=None
+def inser_at_end_eff(head,x):
+    temp=node(x)
+    if head==None:
+        temp.next=temp
+        return temp
+    temp.next=head.next
+    head.next=temp
+    temp.data,head.data=head.data,temp.data
+    return temp
+def printli_circular(head):
+    if head==None:
+        return
+    print(head.data,end=" ")
+    cur=head.next
+    while cur!=head:
+        print(cur.data,end=" ")
+        cur=cur.next
+head=node(1)
+head.next=node(4)
+head.next.next=node(5)
+head.next.next.next=head
+printli_circular(head)
+print()
+head=inser_at_end_eff(head,34)
+printli_circular(head)  
