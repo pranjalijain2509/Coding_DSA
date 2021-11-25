@@ -1,0 +1,35 @@
+insert_at_beggining_circular
+
+
+#insert_at_beggining
+#constant time solution
+class node:
+    def __init__(self,k):
+        self.data=k
+        self.next=None
+def insert_at_beggi(head,x):
+    temp=node(x)
+    if head==None:
+        temp.next=temp
+        return temp
+    
+    temp.next=head.next
+    head.next=temp
+    head.data,temp.data=temp.data,head.data
+    return head
+def printli_circular(head):
+    if head==None:
+        return
+    print(head.data,end=" ")
+    cur=head.next
+    while cur!=head:
+        print(cur.data,end=" ")
+        cur=cur.next
+head=node(1)
+head.next=node(4)
+head.next.next=node(5)
+head.next.next.next=head
+printli_circular(head)
+print()
+head=insert_at_beggi(head,34)
+printli_circular(head)        
