@@ -1,6 +1,6 @@
 #inset_at_the_end_Naive
 #space- theta n 
-#Time -theta n
+#Time -theta 1
 
 class node:
     def __init__(self,k):
