@@ -1,0 +1,25 @@
+#insert_at_beg
+#theta 1
+class node:
+    def __init__(self,k):
+        self.data=k
+        self.next=None
+        self.prev=None
+def insert_beg(head,x):
+    temp=node(x)
+    if head==None:
+        return temp
+    temp.next=head
+    head.prev=temp
+    return temp
+def printli_double(head):
+    cur=head
+    while cur!=None:
+        print(cur.data,end=" ")
+        cur=cur.next
+head=None
+head=insert_beg(head,12)
+head=insert_beg(head,13)
+head=insert_beg(head,14)
+head=insert_beg(head,15)
+printli_double(head)
