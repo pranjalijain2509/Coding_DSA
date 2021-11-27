@@ -1,0 +1,42 @@
+#REVERSE DOUBLY LINKED LIST
+#THETHA N
+
+class node:
+    def __init__(self,k):
+        self.data=k
+        self.next=None
+        self.prev=None
+def insert_first(head,x):
+    temp=node(x)
+    if head==None:
+        return temp
+    temp.next=head
+    head.prev=temp
+    return temp
+def reverse(head):
+    if head==None:
+        return None
+    if head.next==None:
+        return None
+    cur=head
+    prev=None
+    while cur!=None:
+        prev=cur
+        cur.next,cur.prev=cur.prev,cur.next
+        cur=cur.prev
+    return prev
+def pritnli(head):
+    cur=head
+    while cur!=None:
+        print(cur.data,end=" ")
+        cur=cur=cur.next
+head=None
+head=insert_first(head,1)
+head=insert_first(head,2)
+head=insert_first(head,3)
+head=insert_first(head,4)
+head=insert_first(head,5)
+printli(head)
+print()
+head=reverse(head)
+printli(head)
