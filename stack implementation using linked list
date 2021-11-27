@@ -1,0 +1,40 @@
+#stack implementation using linked list
+#all the operation takes constant amount of time
+
+class node:
+    def __init__(self,k):
+        self.data=k
+        self.next=None
+class mystack:
+    def __init__(self):
+        self.head=None
+        self.siz=0
+    def push(self,x):
+        temp=node(x)
+        temp.next=self.head
+        self.siz+=1
+        self.head=temp
+        return head
+    def sizee(self):
+        return self.siz
+    def top(self):
+        if self.head==None:
+            return None
+        return self.head.data
+    def pop(self):
+        if self.head==None:
+            return None
+        res=self.head.data
+        self.siz-=1
+        self.head=self.head.next
+        return res
+    
+c=mystack()
+c.push(10)
+c.push(20)
+c.push(30)
+print(c.sizee())
+print(c.top())
+print(c.pop())
+print(c.pop())
+print(c.sizee())
