@@ -1,0 +1,14 @@
+#method 2- to implement stack
+#this is not cash friendly
+#it is implemented using doubly ended queue
+#in worst case it is constant
+
+from collections import deque
+stack=deque()
+stack.append(10)
+stack.append(20)
+print(stack.pop())
+top=stack[-1]
+print(top)
+size=len(stack)
+print(size)
