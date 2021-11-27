@@ -1,4 +1,7 @@
 #method 1 - to implement stack
+#this method is cash friendly
+#in worst case it may be linear
+#best case it is constant
 
 stack=[]
 stack.append(10)
