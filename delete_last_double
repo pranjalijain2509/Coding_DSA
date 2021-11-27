@@ -1,0 +1,35 @@
+#delete_last_double
+#theta n
+class node:
+    def __init__(self,k):
+        self.data=k
+        self.next=None
+        self.prev=None
+def insert_first(head,x):
+    temp=node(x)
+    if head==None:
+        return temp
+    temp.next=head
+    head.prev=temp
+    return temp
+def delete_last(head):
+    cur=head
+    while cur.next.next!=None:
+        cur=cur.next
+    cur.next=None
+    return head
+def printli(head):
+    cur=head
+    while cur!=None:
+        print(cur.data,end=" ")
+        cur=cur.next
+head=None
+head=insert_first(head,3)
+head=insert_first(head,4)
+head=insert_first(head,5)
+head=insert_first(head,6)
+head=insert_first(head,7)
+printli(head)
+print()
+head=delete_last(head)
+printli(head)
