@@ -1,0 +1,54 @@
+#queue implementation using linked list
+#all the function takes constant time
+
+class node:
+    def __init__(self,k):
+        self.data=k
+        self.next=None
+class myqueue:
+    def __init__(self):
+        self.front=None
+        self.rear=None
+        self.sz=0
+    def my_size(self):
+        return self.sz
+    def isempty(self):
+        return(self.sz==0)
+    def getfront(self):
+        return(self.front.data)
+    def getrear(self):
+        return(self.rear.data)
+    def enqueue(self,x):
+        temp=node(x)
+        if self.rear==None:
+            self.front=temp
+        else:
+            self.rear.next=temp
+        self.rear=temp
+        self.sz=self.sz+1
+    def dequeue(self):
+        if self.front==None:
+            return None
+        res=self.front.data
+        self.front=self.front.next
+        self.sz=self.sz-1
+        return res
+c=myqueue()
+c.enqueue(12)
+c.enqueue(23)
+c.enqueue(34)
+c.enqueue(45)
+print(c.isempty())
+print(c.dequeue())
+print(c.getfront())
+print(c.getrear())
+print(c.my_size())
+
+
+
+Output-
+False
+12
+23
+45
+3
