@@ -1,0 +1,17 @@
+#conversion from infix to prefix
+#Naive
+1. x+y*(z-w)
+(x+(y*(z-w)))
+(x+(y*(-zw)))
+(x+(*y-zw))
+(+x*y-zw)
+
+2. x+y*z/w+u
+x+(y*z)/w+u
+x+((y*z)/w)+u
+(x+((y*z)/w))+u
+((x+((y*z)/w))+u)
+((x+(*yz)/w)+u)
+((x+(/*yzw)+u))
+((+x/*yzw)+u)
+(++x/*yzwu)
