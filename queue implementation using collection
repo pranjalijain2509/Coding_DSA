@@ -1,0 +1,39 @@
+#queue implementation using collection
+#all the operation take constant time
+#it is an efficient way
+
+from collections import deque
+q=deque()
+#enquequ
+q.append(10)
+q.append(20)
+q.append(30)
+print(q)
+#dequeue
+print(q.popleft())
+print(q)
+#enqueue
+q.append(40)
+print(q)
+#length of queue
+print(len(q))
+#checking if queue is empty or not
+if len(q)==0:
+    print('empty')
+else:
+    print('Not empty')
+#front of the queue
+print(q[0])
+#rear of the queue
+print(q[-1])
+
+
+Output-
+deque([10, 20, 30])
+10
+deque([20, 30])
+deque([20, 30, 40])
+3
+Not empty
+20
+40
