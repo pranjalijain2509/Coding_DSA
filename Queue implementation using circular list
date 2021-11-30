@@ -1,0 +1,63 @@
+#Queue implementation using circular list
+#It takes constant amount of time
+
+class myque:
+    def __init__(self,c):
+        self.li=[None]*c
+        self.cap=c
+        self.front=0
+        self.size=0
+    def enqueue(self,x):
+        if self.size==self.cap:
+            return
+        rear=(self.front+self.size-1)%self.cap
+        rear=(rear+1)%self.cap
+        self.li[rear]=x
+        self.size+=1
+    def dequeue(self):
+        if self.size==0:
+            return None
+        else:
+            res=self.li[self.front]
+            self.front=(self.front+1)%self.cap
+            self.size-=1
+            return res
+    def my_size(self):
+        return self.size
+    def getfront(self):
+        if self.size==0:
+            return None
+        else:
+            return self.li[self.front]
+    def getrear(self):
+        if self.size==None:
+            return None
+        else:
+            rear=(self.front+self.size-1)%self.cap
+            return self.li[rear]
+    def isempty(self):
+        return self.size==0
+    
+    
+k=myque(5)
+k.enqueue(10)
+k.enqueue(20)
+k.enqueue(30)
+k.enqueue(40)
+print(k.my_size())
+print(k.getfront())
+print(k.getrear())
+print(k.isempty())
+print(k.dequeue())
+print(k.my_size())
+print(k.dequeue())
+
+
+Output-
+4
+10
+40
+False
+10
+3
+20
