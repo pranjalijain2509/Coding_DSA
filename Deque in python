@@ -1,0 +1,15 @@
+#Deque in python
+#they all take constant amount of time
+
+from collections import deque
+d=deque()
+#"append" will append the item at rear end of the deque
+d.append(10)
+d.append(20)
+#"appendleft" will append the item at the front end of the queue
+d.appendleft(30)
+#"pop" will remove the item from the rear end
+d.pop()
+#"popleft" will remove the item from the front end
+d.popleft()
+print(d)
