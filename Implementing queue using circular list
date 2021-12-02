@@ -1,0 +1,66 @@
+#Implementing queue using circular list
+#all the function are implemented in constant time
+#they are cash friendly
+#they have random access
+
+class myque:
+    def __init__(self,c):
+        self.l=[None]*c
+        self.cap=c
+        self.front=0
+        self.sz=0
+    def my_size(self):
+        return self.sz
+    def isempty(self):
+        return self.sz==0
+    def getfront(self):
+        return self.l[self.front]
+    def getrear(self):
+        rear=(self.front+self.sz-1)%self.cap
+        return self.l[rear]
+    def insert_front(self,x):
+        if self.front==self.cap:
+            return None
+        self.front=(self.front-1)%self.cap
+        self.l[self.front]=x
+        self.sz+=1
+    def insert_rear(self,x):
+        if self.front==self.cap:
+            return None
+        rear=(self.front+self.sz-1)%self.cap
+        rear=(rear+1)%self.cap
+        self.l[rear]=x
+        self.sz+=1
+    def delete_front(self):
+        if self.sz==0:
+            return None
+        res=self.l[self.front]
+        self.front=(self.front+1)%self.cap
+        self.sz-=1
+        return res
+    def delete_rear(self):
+        if self.sz==0:
+            return None
+        rear=(self.front+self.sz-1)%self.cap
+        res=self.l[rear]
+        rear=(rear-1)%self.cap
+        self.sz-=1
+        return res
+c=myque(4)
+c.insert_front(20)
+c.insert_front(30)
+c.insert_rear(45)
+print(c.my_size())
+print(c.isempty())
+print(c.getfront())
+print(c.getrear())
+print(c.delete_front())
+print(c.delete_rear())
+
+Output-
+3
+False
+30
+45
+30
+45
