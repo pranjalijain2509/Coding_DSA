@@ -1,0 +1,11 @@
+#time complexity of deque function
+1.append() - big o(1)
+2.appendleft() - big o(1)
+3.pop() - big 0(1)
+4.popleft - big 0(1)
+5.d[i] - big o(n)
+6.count(x)- big o(n)
+7.d[i]=y - big o(n)
+8. rotate(r) - theta(abs(r))
+9. estend(l) - theta(len(l))
+10. extendleft(l) - theta(len(l))
