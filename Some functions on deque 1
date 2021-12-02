@@ -10,9 +10,14 @@ print(d)
 #"rotate" function rotates the deque but since value is negative so it is rotated anti clockwise
 d.rotate(-3)
 print(d)
+#"reverse" function reverses the whole deque
+d.reverse()
+print(d)
 
 Output-
 
 deque([10, 20, 30, 40])
 deque([30, 40, 10, 20])
 deque([20, 30, 40, 10])
+deque([10, 40, 30, 20])
+
