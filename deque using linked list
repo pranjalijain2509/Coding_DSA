@@ -1,0 +1,97 @@
+#deque using linkedlist
+
+class node:
+    def __init__(self,k):
+        self.data=k
+        self.next=None
+        self.temp=None
+class myque:
+    def __init__(self):
+        self.front=None
+        self.rear=None
+        self.sizee=0
+        
+    def my_size(self):
+        return self.sizee
+    
+    def isempty(self):
+        return(self.sizee==0)
+    
+    def getfront(self):
+        return self.front.data
+    
+    def getrear(self):
+        return self.rear.data
+
+    def insert_rear(self,x):
+        temp=node(x)
+        if self.rear==None:
+            self.front=temp
+        else:
+            self.rear.next=temp
+            temp.prev=self.rear
+        self.rear=temp
+        self.sizee+=1
+        
+    def insert_front(self,x):
+        temp=node(x)
+        if self.front==None:
+            self.front=temp
+        else:
+            temp.next=self.front
+            self.front.prev=temp
+            temp.prev=None
+        self.front=temp
+        self.sizee+=1
+        
+   
+        
+    def delete_front(self):
+        if self.front==None:
+            return None
+        else:
+            res=self.front.data
+            self.front=self.front.next
+            if self.front==None:
+                self.rear==None
+            else:
+                self.front.prev=None
+        self.sizee-=1
+        return res
+    
+         
+    def delete_rear(self):
+        if self.rear==None:
+            return None
+        else:
+            res=self.rear.data
+            self.rear=self.rear.prev
+            if self.rear==None:
+                self.front==None
+            else:
+                self.front.next=None
+        self.sizee-=1
+        return res
+    
+c=myque()
+
+c.insert_rear(10)
+c.insert_rear(20)
+c.insert_rear(30)
+c.insert_rear(40)
+c.insert_front(50)
+print(c.getrear())
+print(c.getfront())
+print(c.delete_front())
+print(c.delete_rear())
+print(c.my_size())   
+print(c.getfront())
+
+
+Output-
+40
+50
+50
+40
+3
+10
