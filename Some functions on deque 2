@@ -1,0 +1,17 @@
+#Some functions on deque
+
+from collections import deque
+#we have made a prefined deque
+d=deque([10,20,30,40])
+print(d)
+#by this way we can print an element of deque 
+#name of the queue and then the index number of the element
+print(d[2])
+#we can modify the value of any value
+#fetch the elment by the index no and then provide the updated value
+d[2]=233
+print(d)
+#print the first element of the deque
+print(d[0])
+#print the last element of the deque
+print(d[-1])
