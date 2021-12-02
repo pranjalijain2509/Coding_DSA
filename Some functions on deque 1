@@ -1,0 +1,18 @@
+#Some functions on deque
+
+from collections import deque
+#we have made a prefined deque
+d=deque([10,20,30,40])
+print(d)
+#"rotate" function rotates the deque but since value is positive so it is rotated clockwise
+d.rotate(2)
+print(d)
+#"rotate" function rotates the deque but since value is negative so it is rotated anti clockwise
+d.rotate(-3)
+print(d)
+
+Output-
+
+deque([10, 20, 30, 40])
+deque([30, 40, 10, 20])
+deque([20, 30, 40, 10])
