@@ -1,0 +1,32 @@
+#Some functions on deque
+
+from collections import deque
+#we have made a prefined deque
+d=deque([10,20,30,40])
+print(d)
+#"insert" function will inserts the given element which is "10" on the given index no which is "2"
+#1st paremeter is the index no and 2nd paremeter is the value
+d.insert(2,10)
+#"count" will count the number of element in the deque 
+print(d.count(10))
+print(d)
+#"remove" function removes the first occurance of the element
+d.remove(10)
+print(d)
+#"extend" function will insert at the rear end 
+#"append " can just append 1 element but "extend" can do more than 1
+d.extend([23,45])
+print(d)
+#"extendleft" function insert at the front end but it inserts in reverse direction
+#"appendleft " can just append 1 element but "extendleft" can do more than 1
+d.extendleft([78,79])
+print(d)
+
+
+Output-
+deque([10, 20, 30, 40])
+2
+deque([10, 20, 10, 30, 40])
+deque([20, 10, 30, 40])
+deque([20, 10, 30, 40, 23, 45])
+deque([79, 78, 20, 10, 30, 40, 23, 45])
