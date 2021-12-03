@@ -8,8 +8,8 @@ d.append(10)
 d.append(20)
 #"appendleft" will append the item at the front end of the queue
 d.appendleft(30)
-#"pop" will remove the item from the rear end
+#"pop" will remove the item from the rear end of the queue
 d.pop()
-#"popleft" will remove the item from the front end
+#"popleft" will remove the item from the front end of the queue
 d.popleft()
 print(d)
