@@ -1,0 +1,30 @@
+#Search binary tree
+#time complexity - big o(n) becuase in the worst case it might traverse the whole tree but still could not find
+#time complexity is constant for the best case if key is matched with the root itself
+#space complexity - big o(n) in worst case
+#space compexity is constant for best case
+
+class node:
+    def __init__(self,k):
+        self.right=None
+        self.left=None
+        self.data=k
+def search_key(root,key):
+    if root is None:
+        return False
+    elif root.data==key:
+        return True
+    elif search_key(root.left,key)==True:
+        return True
+    elif search_key(root.right,key)==True:
+        return True
+    else:
+        return False
+root=node(10)
+root.left=node(20)
+root.right=node(570)
+root.right.left=node(40)
+root.right.right=node(50)
+search_key(root,50) 
+
+Output-True
