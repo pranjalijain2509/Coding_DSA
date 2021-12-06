@@ -1,0 +1,30 @@
+#height of the binary tree
+#time compplexity - theta(n) that is visiting evvery node once and doing constant amount of work
+#space complexity - theta(h)
+#h is the height of tree 
+#height is no of nodes and in function stack we will have max of h+1 call
+#if height is no of edges and in function stack we will have max of h+2 call
+
+#convention 1- by counting the no of nodes from root to the longest path
+#Longer Versiom
+class node:
+    def __init__(self,k):
+        self.left=None
+        self.right=None
+        self.data=k
+def height_tree(root):
+    if root==None:
+        return 0
+    else:
+        left_height=height_tree(root.left)
+        right_height=height_tree(root.right)
+        return max(left_height,right_height)+1
+root=node(10)
+root.left=node(20)
+root.right=node(570)
+root.right.left=node(40)
+root.right.right=node(50)
+height_tree(root) 
+
+Output-3
+
