@@ -1,0 +1,14 @@
+#Binary Tree
+#linked representation of binary tree
+#It can have atmost 2 children 
+class node:
+    def __init__(self,k):
+        self.left=None
+        self.right=None
+        self.data=k
+root=node(10)
+root.left=node(20)
+root.right=node(30)
+#this will create a tree whose root will be 10
+#to the left subtree their will be node with value 20
+#to the right subtree their will be the node with value 30
