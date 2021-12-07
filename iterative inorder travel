@@ -1,0 +1,38 @@
+#iterative inorder travel
+#time complexity - theta(n) that means it every node once and in each node only 2 constant operation are happening one is append and pop
+#space complexity - theta(h) at max their will be height no of nodes in the stack
+
+class node:
+    def __init__(self,k):
+        self.left=None
+        self.right=None
+        self.data=k
+def iter_inor(root):
+    if root is None:
+        return
+    st=[]
+    cur=root
+    while cur is not None:
+        st.append(cur)
+        cur=cur.left
+    while len(st)>0:
+        cur=st.pop()
+        print(cur.data)
+        cur=cur.right
+        while cur is not None:
+            st.append(cur)
+            cur=cur.left
+    
+root=node(10)
+root.left=node(20)
+root.right=node(570)
+root.right.left=node(40)
+root.right.right=node(50)
+iter_inor(root) 
+
+Output-
+20
+10
+40
+570
+50
