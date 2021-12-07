@@ -1,4 +1,4 @@
-#Search in BST
+#Search in BST recursive solution
 #Time complexity is big o(h) in the worst case because it has to go till th height to search an item but it could be costant if root in the only element to search
 #space complexity is big o(h) because at max we can have h+1 element in the call stack but it could be big o(1) as well if root and element to be searched is same
 
