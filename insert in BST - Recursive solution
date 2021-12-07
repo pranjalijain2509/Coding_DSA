@@ -1,0 +1,31 @@
+#insert in BST - Recursive solution
+#Time complexity is big o(h) in the worst case because it has to go till th height to search an item but it could be costant if root in the only element to search
+#space complexity is big o(h) because at max we can have h+1 element in the call stack but it could be big o(1) as well if root and element to be searched is same
+
+class node:
+    def __init__(self,k):
+        self.left=None
+        self.right=None
+        self.data=k
+def insert_rec(root,key):
+    if root is None:
+        return node(key)
+    elif root.data==key:
+        return root
+    elif root.data>key:
+        root.left=insert_rec(root.left,key)
+    else:
+        root.right=insert_rec(root.right,key)
+    return root
+def printl(root):
+    if root is None:
+        return
+    printl(root.left)
+    print(root.data)
+    printl(root.right)
+root=None
+root=insert_rec(root,50)
+root=insert_rec(root,40)
+root=insert_rec(root,60)
+root=insert_rec(root,90)
+printl(root)
