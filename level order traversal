@@ -1,0 +1,36 @@
+#level order traversal
+#time complexity is theta(n) becuase it every node of the tree and perform 2 constant operation which is append and popleft
+#space complexity is theta(w) here w is the width of the binary tree
+#if it is a skewed tree then space complexity is theta(1)
+#if it is a perfectly balanced tree then space complexity is theta(n)
+from collections import deque
+class node:
+    def __init__(self,k):
+        self.left=None
+        self.right=None
+        self.data=k
+def level_order(root):
+    if root is None:
+        return
+    q=deque()
+    q.append(root)
+    while len(q)>0:
+        cur=q.popleft()
+        print(cur.data)
+        if cur.left is not None:
+            q.append(cur.left)
+        if cur.right is not None:
+            q.append(cur.right)
+root=node(10)
+root.left=node(20)
+root.right=node(570)
+root.right.left=node(40)
+root.right.right=node(50)
+level_order(root)
+
+Output-
+10
+20
+570
+40
+50
