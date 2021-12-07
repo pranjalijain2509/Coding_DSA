@@ -29,3 +29,9 @@ root=insert_rec(root,40)
 root=insert_rec(root,60)
 root=insert_rec(root,90)
 printl(root)
+
+Output-
+40
+50
+60
+90
