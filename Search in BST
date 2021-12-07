@@ -1,0 +1,26 @@
+#Search in BST
+#Time complexity is big o(h) in the worst case because it has to go till th height to search an item but it could be costant if root in the only element to search
+#space complexity is big o(h) because at max we can have h+1 element in the call stack but it could be big o(1) as well if root and element to be searched is same
+
+class node:
+    def __init__(self,k):
+        self.left=None
+        self.right=None
+        self.data=k
+def serach(root,key):
+    if root is None:
+        return False
+    elif root.data==key:
+        return True
+    elif root.data>key:
+        return serach(root.left,key)
+    else:
+        return serach(root.right,key)
+root=node(10)
+root.left=node(5)
+root.right=node(30)
+root.right.left=node(15)
+root.right.right=node(50)
+serach(root,40) 
+
+Output-False
