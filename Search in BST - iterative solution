@@ -1,0 +1,26 @@
+#Search in BST - iterative solution
+#Time complexity is big o(h) in the worst case because it has to go till th height to search an item but it could be costant if root in the only element to search
+#space complexity is big o(1) because it is an iterative solution
+
+class node:
+    def __init__(self,k):
+        self.left=None
+        self.right=None
+        self.data=k
+def iterative_search(root,key):
+    while root!=None:
+        if root.data==key:
+            return True
+        elif root.data>key:
+            root=root.left
+        else:
+            root=root.right
+    return False
+root=node(10)
+root.left=node(5)
+root.right=node(30)
+root.right.left=node(15)
+root.right.right=node(50)
+iterative_search(root,50) 
+
+Ouput-True
