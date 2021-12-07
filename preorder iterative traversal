@@ -1,0 +1,33 @@
+#preorder iterative traversal
+#time complexity - theta(n) that means it every node once and in each node only 2 constant operation are happening one is append and pop
+#space complexity - bigo(n) because it will push both right and left child
+
+class node:
+    def __init__(self,k):
+        self.left=None
+        self.right=None
+        self.data=k
+def iterative_preorder(root):
+    if root is None:
+        return 
+    stack=[root]
+    while len(stack)>0:
+        cur=stack.pop()
+        print(cur.data)
+        if cur.right is not None:
+            stack.append(cur.right)
+        if cur.left is not None:
+            stack.append(cur.left)
+root=node(10)
+root.left=node(20)
+root.right=node(570)
+root.right.left=node(40)
+root.right.right=node(50)
+iterative_preorder(root)        
+
+Output-
+10
+20
+570
+40
+50
