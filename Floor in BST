@@ -1,0 +1,33 @@
+#Floor in BST
+#Time complexity is big o(h)
+#space complexity is big o(h)
+# floor is basically finding a maximum value smaller than or equal to the given value
+
+class node:
+    def __init__(self,k):
+        self.left=None
+        self.right=None
+        self.data=k
+def floor_BST(root,x):
+    res=None
+    while root!=None:
+        if root.data==x:
+            return root
+        elif root.data>x:
+            root=root.left
+        else:
+            res=root
+            root=root.right
+    return res.data
+
+root=node(50)
+root.left=node(40)
+root.right=node(70)
+root.left.left=node(30)
+root.left.right=node(45)
+root.right.left=node(65)
+root.right.right=node(75)
+j=floor_BST(root,47)
+print(j)
+
+Output-45
