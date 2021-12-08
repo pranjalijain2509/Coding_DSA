@@ -12,7 +12,7 @@ def floor_BST(root,x):
     res=None
     while root!=None:
         if root.data==x:
-            return root
+            return root.data
         elif root.data>x:
             root=root.left
         else:
