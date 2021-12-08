@@ -1,0 +1,62 @@
+#delete in BST
+#Time complexity is big o(h)
+#space complexity is big o(h)
+# h is the height of the tree
+
+class node:
+    def __init__(self,k):
+        self.left=None
+        self.right=None
+        self.data=k
+def insert_rec(root,key):
+    if root is None:
+        return node(key)
+    elif root.data==key:
+        return root
+    elif root.data>key:
+        root.left=insert_rec(root.left,key)
+    else:
+        root.right=insert_rec(root.right,key)
+    return root
+def delete_rec(root,key):
+    if root is None:
+        return 
+    elif root.data>key:
+        root.left=delete_rec(root.left,key)
+    elif root.data<key:
+        root.right=delete_rec(root.right,key)
+    else:
+        if root.left==None:
+            return root.right
+        elif root.right==None:
+            return root.left
+        else:
+            succ=getsucc(root.right,key)
+            root.data=succ
+            root.right=delete_rec(root.right,key)
+    return root
+def getsucc(cur,key):
+    while cur.left!=None:
+        cur=cur.left
+    return cur.data
+def printl(root):
+    if root is None:
+        return
+    printl(root.left)
+    print(root.data)
+    printl(root.right)
+root=None
+root=insert_rec(root,50)
+root=insert_rec(root,40)
+root=insert_rec(root,60)
+root=insert_rec(root,90)
+root=insert_rec(root,20)
+root=delete_rec(root,50)
+printl(root)
+
+Ouput-
+20
+40
+60
+60
+90
