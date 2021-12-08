@@ -1,0 +1,32 @@
+#ceil in BST
+#Time complexity is big o(h)
+#space complexity is big o(h)
+#ceil is when you have to finding minimum value greater than or equal to the given value
+
+class node:
+    def __init__(self,k):
+        self.left=None
+        self.right=None
+        self.data=k
+def ceil_bst(root,x):
+    res=None
+    while root!=None:
+        if root.data==x:
+            return root.data
+        elif root.data>x:
+            res=root
+            root=root.left
+        else:
+            root=root.right
+    return res.data
+root=node(50)
+root.left=node(40)
+root.right=node(70)
+root.left.left=node(30)
+root.left.right=node(45)
+root.right.left=node(65)
+root.right.right=node(75)
+j=ceil_bst(root,47)
+print(j)
+
+output-50
