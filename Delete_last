@@ -1,6 +1,4 @@
 Delete_last
-
-
 class node:
     def __init__(self,k):
         self.data=k
