@@ -1,2 +1,2 @@
 # Coding_DSA
-Basic Codes
+Basic Codes of Data structure and algorithms 
